@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carla & Alejandro · 13·12·2025</title>
+  <meta name="description" content="Boda de Carla y Alejandro · 13 de diciembre de 2025 · Saló de Cent, Barcelona" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <h1 class="hero-title"><span>Carla</span> & <span>Alejandro</span></h1>
+  <p class="hero-date">13 de diciembre de 2025 · 13:00 · Saló de Cent, Ajuntament de Barcelona</p>
+  <div id="countdown" class="countdown" aria-live="polite">
+    <div><strong id="cd-d">--</strong><span>días</span></div>
+    <div><strong id="cd-h">--</strong><span>horas</span></div>
+    <div><strong id="cd-m">--</strong><span>min</span></div>
+    <div><strong id="cd-s">--</strong><span>seg</span></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn" href="#rsvp">Confirmar asistencia</a>
+    <button class="btn btn-outline" id="btn-ics" type="button">Añadir al calendario</button>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="detalles">
+    <h2>Detalles</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Ceremonia</h3>
+        <p><strong>Saló de Cent</strong> · Ajuntament de Barcelona</p>
+        <p>Hora: <strong>13:00</strong></p>
+        <p>Dirección: Pl. de Sant Jaume, 1, Ciutat Vella, 08002 Barcelona</p>
+        <div class="actions">
+          <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Plaza%20de%20Sant%20Jaume%201%20Barcelona">Ver en Google Maps</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Cóctel & Celebración</h3>
+        <p><em>14:30 – 20:00</em></p>
+        <p><span class="muted">Ubicación por confirmar</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="programa">
+    <h2>Programa</h2>
+    <ul class="timeline">
+      <li><span>12:30</span> Llegada de invitados</li>
+      <li><span>13:00</span> Ceremonia civil en Saló de Cent</li>
+      <li><span>14:30</span> Cóctel de celebración</li>
+      <li><span>—</span> Música en directo & DJ</li>
+      <li><span>20:00</span> Cierre</li>
+    </ul>
+  </section>
+
+  <section class="section" id="dresscode">
+    <h2>Dress code</h2>
+    <p>Elegante y cómodo. Paleta sugerida: tonos <strong>hueso</strong> y <strong>verde olivo</strong>.</p>
+  </section>
+
+  <section class="section" id="regalos">
+    <h2>Regalos</h2>
+    <p>Vuestra presencia es el mejor regalo. Si aun así queréis tener un detalle, podéis usar este IBAN o Bizum.</p>
+    <div class="gift-box">
+      <div>
+        <p><strong>IBAN:</strong> <span id="iban-text">PON_AQUI_TU_IBAN</span></p>
+        <button class="btn btn-ghost" id="copy-iban" type="button">Copiar IBAN</button>
+      </div>
+      <div>
+        <p><strong>Bizum:</strong> <span id="bizum-text">PON_AQUI_TU_BIZUM</span></p>
+        <button class="btn btn-ghost" id="copy-bizum" type="button">Copiar Bizum</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rsvp">
+    <h2>Confirmación (RSVP)</h2>
+    <p class="muted small">Lista cerrada. Fecha límite: <strong>16/11/2025</strong>.</p>
+    <form id="rsvp-form" novalidate>
+      <div class="grid">
+        <label>Nombre y apellidos
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <div class="grid">
+        <label>Nº de acompañantes (además de ti)
+          <input type="number" name="companions" min="0" max="5" value="0" required>
+        </label>
+        <label>Restricciones / alergias alimentarias
+          <input type="text" name="diet" placeholder="Ej.: sin gluten, vegetariano...">
+        </label>
+      </div>
+      <div class="consent">
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required>
+          Acepto el tratamiento de mis datos personales para la gestión del evento (RGPD).
+        </label>
+      </div>
+      <div class="cta-row">
+        <button class="btn" type="submit">Enviar confirmación</button>
+        <span id="form-status" class="small muted" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+  </section>
+
+  <section class="section" id="fotos">
+    <h2>Fotos del evento</h2>
+    <p>Tras la boda, subiremos aquí un enlace a un álbum compartido para que podáis subir y descargar fotos.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p class="script">C & A</p>
+  <p class="small muted">© 2025 Carla & Alejandro · Todos los derechos reservados · <a href="#rsvp">Política de privacidad (RGPD)</a></p>
+</footer>
+
+<script>
+  window.__CONFIG__ = {
+    RSVP_ENDPOINT: "PEGARAS_AQUI_LA_URL_DEL_WEB_APP_DE_APPS_SCRIPT",
+    SITE_URL_FOR_QR: "https://TU-DOMINIO.com",
+  };
+</script>
+<script src="script.js" defer></script>
+</body>
+</html>
